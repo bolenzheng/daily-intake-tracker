@@ -1,0 +1,10 @@
+{
+  "id":"./", "name":"Daily Intake Tracker", "short_name":"Daily Intake",
+  "description":"Your daily food diary, macros and meal prep recipes.",
+  "start_url":"./", "scope":"./", "display":"standalone",
+  "background_color":"#171717", "theme_color":"#171717",
+  "icons":[
+    {"src":"icons/icon-192.png","sizes":"192x192","type":"image/png","purpose":"any"},
+    {"src":"icons/icon-512.png","sizes":"512x512","type":"image/png","purpose":"any maskable"}
+  ]
+}
