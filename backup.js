@@ -10,7 +10,7 @@ $('backupFile').onchange=async e=>{
   try{if(file.size>20*1024*1024)throw Error('Choose a backup smaller than 20 MB.');pendingRestore=TrackerBackup.decode(await file.text());$('restoreSummary').textContent=`Replace current data with ${pendingRestore.logs.length} diary entries, ${pendingRestore.foods.length} saved foods, ${pendingRestore.recipes.length} recipes, and the backed-up targets? Unsaved form changes will be cleared. A local undo copy will be saved first.`;$('restoreDialog').showModal();}catch(e){pendingRestore=null;backupMessage(e.message);}
 };
 $('cancelRestore').onclick=()=>{$('restoreDialog').close();pendingRestore=null;};
-function refreshAfterRestore(){restoreEntry();reset();ingredients=[];editingRecipeId=null;$('recipeEditor').hidden=true;render();renderRecipes();refreshRecipeSelect();showPage('home');}
+function refreshAfterRestore(){restoreEntry();reset();ingredients=[];editingRecipeId=null;$('recipeEditor').hidden=true;render();renderRecipes();refreshRecipeSelect();showPage('backup');}
 $('confirmRestore').onclick=()=>{
   if(!pendingRestore)return;
   try{localStorage.setItem(storageKey+'.beforeRestore',TrackerBackup.encode(state));if(!persist(pendingRestore))throw Error('Storage is full or unavailable. Restore was not applied.');pendingRestore=null;$('restoreDialog').close();refreshAfterRestore();$('undoRestore').hidden=false;backupMessage('Backup restored. Your historical entries were imported as saved snapshots.');}catch(e){$('restoreDialog').close();backupMessage(e.message);}

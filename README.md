@@ -13,7 +13,7 @@ A static, offline-capable food diary and recipe manager. No build step, account 
 
 ## Export and restore
 
-The Backup & offline card appears beneath both tabs. Export backup downloads a dated JSON file with all diary dates, saved foods, recipes, comments, electrolytes and targets. Save this in Files or another safe location.
+The Backup & offline card is on the Backup page. Export backup downloads a dated JSON file with all diary dates, saved foods, recipes, comments, electrolytes and targets. Save this in Files or another safe location.
 
 Restore backup accepts one of these JSON files, validates it, and displays counts before confirmation. Restore REPLACES current saved data rather than merging it. Unsaved drafts are cleared. Cancel leaves your data unchanged. A local undo copy is saved before replacement; Undo last restore returns to that copy, replacing any entries added after the restore. Export those newer entries first if you want to keep them. The undo copy is overwritten by the next restore and is not a substitute for an external backup.
 
@@ -38,3 +38,7 @@ When editing any cached app file, increment the CACHE version in sw.js before de
 - Physical iPhone installation, Safari file picker/export, and deployed Vercel behavior still need device testing.
 
 Run calculation tests with `node core.test.cjs` and backup tests with `node backup.test.cjs`.
+
+## Navigation update (cache v2)
+
+Tabs are Home, Diary, Recipe, Backup. Home contains the calendar, Daily overview and electrolytes. Diary contains food entry and the diary, with a date shortcut to the Home calendar. Recipe Log opens Diary. Backup controls appear only on Backup. Saved storage format and key are unchanged.

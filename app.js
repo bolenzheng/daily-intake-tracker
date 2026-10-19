@@ -33,6 +33,7 @@ function dateKey(date){return date.getFullYear()+'-'+String(date.getMonth()+1).p
 function renderCalendar(){
  const selected=new Date($('day').value+'T12:00:00');
  $('selectedDay').textContent=selected.toLocaleDateString('en-AU',{weekday:'short',day:'numeric',month:'short',year:'numeric'});
+ $('diaryDate').textContent=$('selectedDay').textContent+' · Change date';
  $('calendarMonth').textContent=calendarMonth.toLocaleDateString('en-AU',{month:'long',year:'numeric'});
  const logged=new Set(state.logs.map(x=>x.date));const grid=$('calendarDays');grid.replaceChildren();
  const offset=(calendarMonth.getDay()+6)%7,days=new Date(calendarMonth.getFullYear(),calendarMonth.getMonth()+1,0).getDate();
