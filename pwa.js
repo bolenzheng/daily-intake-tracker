@@ -1,6 +1,9 @@
 // Restrict gesture handling to the installed app; Safari retains normal zoom.
 const installedDisplay=window.matchMedia('(display-mode: standalone)');
 function isInstalledTracker(){return navigator.standalone===true||installedDisplay.matches;}
+function updateInstalledGestures(){document.documentElement.classList.toggle('installed-tracker',isInstalledTracker());}
+updateInstalledGestures();
+installedDisplay.addEventListener('change',updateInstalledGestures);
 function preventInstalledPinch(event){
   if(isInstalledTracker()&&event.cancelable&&(event.type.startsWith('gesture')||event.touches?.length>1))event.preventDefault();
 }

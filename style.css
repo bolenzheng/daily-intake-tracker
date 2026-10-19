@@ -10,3 +10,7 @@ main{max-width:430px;padding:20px 16px max(24px,env(safe-area-inset-bottom));mar
 [hidden]{display:none!important}.tabs{display:flex;gap:4px;background:#262626;padding:4px;border-radius:12px;margin:18px 0}.tabs button{flex:1;border:0;background:none;color:#aaa;min-height:44px;border-radius:9px;font-size:13px}.tabs button[aria-current="page"],.tabs button[aria-pressed="true"]{background:#414735;color:#e4edcc}.brand{font-size:20px}#recipeManager{margin-top:18px}#recipeEditor{margin-top:18px}#recipeEditor h2{margin-bottom:20px}.recipe-actions{display:flex;flex-wrap:wrap;gap:8px}.recipe-actions button{min-height:44px}.ingredient-row{border-bottom:1px solid #393939;padding:12px 0}.ingredient-row p{font-size:12px;color:#aaa;margin:5px 0}#recipeTotal{color:#dbe5bd;font-weight:600}#recipePage>.heading .muted{display:block}.recipe-delete{color:#e7aba4}button:disabled{opacity:.5;cursor:default}
 
 #backupPanel{margin-top:24px}#backupPanel button{min-height:44px}#backupStatus{font-size:14px;overflow-wrap:anywhere}body{padding-bottom:env(safe-area-inset-bottom)}input,select,textarea{font-size:16px}
+/* Disable double-tap zoom in the installed app without canceling button taps or scrolling. */
+html.installed-tracker,html.installed-tracker body,html.installed-tracker body *{touch-action:manipulation}
+/* Six fixed week rows, including empty weeks, keep every month the same height. */
+.calendar-days{grid-template-rows:repeat(6,44px);height:279px}
