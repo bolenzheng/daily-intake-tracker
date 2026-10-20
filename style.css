@@ -14,3 +14,5 @@ main{max-width:430px;padding:20px 16px max(24px,env(safe-area-inset-bottom));mar
 html.installed-tracker,html.installed-tracker body,html.installed-tracker body *{touch-action:manipulation}
 /* Six fixed week rows, including empty weeks, keep every month the same height. */
 .calendar-days{grid-template-rows:repeat(6,44px);height:279px}
+
+#trendMetric{max-width:155px;font-size:13px}#trendChart svg{width:100%;height:auto;display:block}#trendPeriod{font-size:12px;text-align:center}#trendDetail{font-size:14px;min-height:40px;color:#dbe5bd}.trend-values{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:4px}.trend-values button{text-align:left;font-size:12px}input[readonly],textarea[readonly]{color:#aaa;background:#202020}#trendsCard .tabs button{font-size:12px}

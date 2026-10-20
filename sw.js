@@ -1,6 +1,6 @@
 // Change this version whenever an app file changes.
-const CACHE='daily-intake-shell-v5';
-const FILES=['./','./index.html','./style.css','./core.js','./app.js','./recipes.js','./backup-core.js','./backup.js','./pwa.js','./manifest.webmanifest','./icons/icon-192.png','./icons/icon-512.png','./icons/apple-touch-icon.png'];
+const CACHE='daily-intake-shell-v6-1';
+const FILES=['./','./index.html','./style.css','./history-core.js','./trends.js','./core.js','./app.js','./recipes.js','./backup-core.js','./backup.js','./pwa.js','./manifest.webmanifest','./icons/icon-192.png','./icons/icon-512.png','./icons/apple-touch-icon.png'];
 self.addEventListener('install',event=>event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(FILES))));
 self.addEventListener('activate',event=>event.waitUntil((async()=>{for(const key of await caches.keys())if(key.startsWith('daily-intake-shell-')&&key!==CACHE)await caches.delete(key);await self.clients.claim();})()));
 self.addEventListener('fetch',event=>{
